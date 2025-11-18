@@ -1,0 +1,73 @@
+:root{
+  --max-width:1100px;
+  --accent:#246bff;
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --muted:#666;
+  --radius:10px;
+  --gap:16px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#111;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+.container{
+  width:90%;
+  max-width:var(--max-width);
+  margin:0 auto;
+}
+
+/* Header */
+.site-header{
+  background:linear-gradient(90deg,#fff, #fbfdff);
+  box-shadow:0 1px 0 rgba(0,0,0,0.04);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.site-header .container{
+  display:flex;
+  gap:var(--gap);
+  align-items:center;
+  padding:12px 0;
+}
+.logo{margin:0;font-size:1.2rem}
+.nav{margin-left:auto;display:flex;gap:12px}
+.nav a{color:var(--muted);text-decoration:none;font-weight:600}
+.menu-toggle{display:none;border:0;background:transparent;font-size:20px;cursor:pointer}
+
+/* Hero */
+.hero{padding:48px 0;background:linear-gradient(180deg,#eef5ff,transparent);}
+.hero-inner{display:flex;flex-direction:column;gap:12px;padding:28px 0}
+.hero h2{margin:0;font-size:clamp(1.4rem,2.8vw,2rem)}
+.cta{display:inline-block;margin-top:6px;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none}
+
+/* Sections */
+.section{padding:28px 0}
+.card-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(30,40,60,0.06)}
+.small-btn{display:inline-block;margin-top:8px;padding:6px 10px;border-radius:7px;background:#eef3ff;color:var(--accent);text-decoration:none;font-weight:600}
+
+/* Form */
+.form{display:grid;gap:10px;max-width:600px}
+.form label{display:flex;flex-direction:column;font-weight:600;color:var(--muted)}
+input,textarea{padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:#fff}
+.form-row{display:flex;gap:8px}
+.btn{padding:10px 14px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid #dfe8ff}
+
+/* Footer */
+.site-footer{padding:20px 0;text-align:center;color:var(--muted)}
+
+/* Responsive */
+@media (max-width:800px){
+  .nav{display:none}
+  .menu-toggle{display:block;margin-left:auto}
+}
